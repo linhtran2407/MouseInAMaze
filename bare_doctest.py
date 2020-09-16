@@ -9,22 +9,7 @@ Typically this file would be renamed via "git mv" to be the main test of the pro
 
 """
 
-# make Python look in the right place for logic.py, or complain if it doesn't
-try:
-    import sys
-    sys.path.append('/home/courses/python')
-    from logic import *
-except:
-    print("*** Can't find logic.py in /home/courses/python, resorting to basic logic_basic.py in the project")
-    print("*** If this happens in the CS teaching lab, tell your instructor")
-    try:
-        from logic_basic import *
-    except:
-        print("Can't find logic.py in /home/courses/python, and missing logic_basic.py")
-        print("   This shouldn't happen in CS projects; if it does, and you need to keep working")
-        print("   You could add a logic_basic and define, e.g., a function 'precondition' that does nothing")
-        sys.exit(1)
-
+import Logic
 
 
 

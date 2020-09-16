@@ -12,11 +12,19 @@ Typically this file would be renamed via "git mv" to be the main test of the pro
 
 """
 
+# Logic tries to get the standard Haverford "logic" module, provides some parts if it fails
 from Logic import *
 
 def times(x: float, y: float) -> float:
     precondition(x==6)
-    return x*y
+    assertion(isInteger(6) and not isInteger(12.3))
+    assertion(isNumber(6) and isNumber(6.6) and not isNumber("6.66"))
+    assertion(isString("6") and not isString(6.66))
+    assertion(isBoolean(True) and not isBoolean(0))
+    result = x*y
+    loopInvariant(True) # just be sure the function is available
+    postcondition(result == x*y)
+    return result
 
 
 #############################################################################################

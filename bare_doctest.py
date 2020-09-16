@@ -7,10 +7,16 @@ Typically this file would be renamed via "git mv" to be the main test of the pro
 >>> 6*7
 42
 
+>>> times(6, 7)
+42
+
 """
 
-import Logic
+from Logic import *
 
+def times(x: float, y: float) -> float:
+    precondition(x==6)
+    return x*y
 
 
 #############################################################################################

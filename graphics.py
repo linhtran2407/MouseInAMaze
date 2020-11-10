@@ -176,35 +176,35 @@ class App:
         sys.exit()
             
 root = Tk()
-
 app = App(root)
 
+
 # def maze_debug_on(): return mazeDebugOn()
-def mazeDebugOn():
+def mazeDebugOn() -> None:
     app.maze_debug = True
 
 
 # def maze_debug_off(): return mazeDebugOff()
-def mazeDebugOff():
+def mazeDebugOff() -> None:
     app.maze_debug = False
 
 
-def quit_maze():
+def quit_maze() -> None:
     print("Exiting mouse in a maze program due to 'quit' button")
     sys.exit()
 
 
-def maze_debug(string):
+def maze_debug(string: str) -> None:
     if app.maze_debug:
         print(string)
 
 
-def maze_print(string):
+def maze_print(string: str) -> None:
     print(string)
 
 
 # def turn_left(): return turnLeft()
-def turnLeft():
+def turnLeft() -> None:
     maze_debug("Turning left")
     if(app.mouse_direction == "right"):
         app.mouse_direction = "up"
@@ -218,7 +218,7 @@ def turnLeft():
 
 
 # def turn_right(): return turnRight()
-def turnRight():
+def turnRight() -> None:
     maze_debug("Turning right")
     if(app.mouse_direction == "right"):
         app.mouse_direction = "down"
@@ -317,6 +317,7 @@ def whatIsLeft() -> str:
             else:
                 return ""
 
+
 # def look_ahead(): return lookAhead()
 def lookAhead() -> str:
     result = whatIsAhead()
@@ -339,7 +340,7 @@ def lookLeft() -> str:
 
 
 # def move_forward(): return moveForward()
-def moveForward() -> str:
+def moveForward() -> None:
     if(whatIsAhead() != "w" and whatIsAhead() != "cat's stomach"):
         maze_debug("Moving forward")
         old_position = app.mouse_position
@@ -367,8 +368,8 @@ def moveForward() -> str:
 
 
 # def eat_cheese(): return eatCheese()
-def eatCheese():
-    if(whatIsAhead()=="c"):
+def eatCheese() -> bool:
+    if whatIsAhead()=="c":
         maze_print("Eating cheese ... yum yum!")
         return True
     else:

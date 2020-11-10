@@ -5,9 +5,6 @@ The main algorithm for the mouse in the maze should be written in this file.
 We don't have a good way to
 
 """
-# make Python look in the right place for logic.py
-import sys
-sys.path.append('/home/courses/python')
 from Logic import *
 from graphics import moveForward, turnLeft, turnRight, lookAhead, lookLeft, lookRight, eatCheese, mazeDebugOn, mazeDebugOff
 

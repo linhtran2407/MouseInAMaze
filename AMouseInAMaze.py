@@ -11,6 +11,8 @@ from graphics import *
 from findTheCheese import *
 
 # Hopefully the following will stop any infinite loops without killing anything correct
+# If this import causes trouble on your home computer, feel free to comment out the next two lines
+# If you want to run a really big maze, increase the numbers 30 and 35 (try doubling them both)
 import resource
 resource.setrlimit(resource.RLIMIT_CPU, [30, 35])
 

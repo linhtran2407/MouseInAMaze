@@ -6,11 +6,12 @@ IN CMSC 105, YOU DO NOT NEED TO READ OR UNDERSTAND IT.
 
 """
 
-from Tkinter import *
+from tkinter import *
 import random
 import math
 import time
 import sys
+
 
 class App:
 
@@ -178,28 +179,31 @@ root = Tk()
 
 app = App(root)
 
-def maze_debug_on(): return mazeDebugOn()
+# def maze_debug_on(): return mazeDebugOn()
 def mazeDebugOn():
     app.maze_debug = True
 
-def maze_debug_off(): return mazeDebugOff()
+
+# def maze_debug_off(): return mazeDebugOff()
 def mazeDebugOff():
     app.maze_debug = False
-    
+
+
 def quit_maze():
     print("Exiting mouse in a maze program due to 'quit' button")
     sys.exit()
-    
+
 
 def maze_debug(string):
-    if (app.maze_debug):
+    if app.maze_debug:
         print(string)
+
 
 def maze_print(string):
     print(string)
 
 
-def turn_left(): return turnLeft()
+# def turn_left(): return turnLeft()
 def turnLeft():
     maze_debug("Turning left")
     if(app.mouse_direction == "right"):
@@ -211,8 +215,9 @@ def turnLeft():
     elif(app.mouse_direction == "down"):
         app.mouse_direction = "right"
     app.update_mouse_rotation()   
-    
-def turn_right(): return turnRight()
+
+
+# def turn_right(): return turnRight()
 def turnRight():
     maze_debug("Turning right")
     if(app.mouse_direction == "right"):
@@ -225,15 +230,16 @@ def turnRight():
         app.mouse_direction = "left"
     app.update_mouse_rotation()
 
-def what_is_ahead(): return whatIsAhead()
-def whatIsAhead():
-    if (app.mouse_position == app.cat_position):
+
+# def what_is_ahead(): return whatIsAhead()
+def whatIsAhead() -> str:
+    if app.mouse_position == app.cat_position:
         return "cat's stomach"
-    elif (app.mouse_position == app.cheese_position):
+    elif app.mouse_position == app.cheese_position:
         return "c"
     else:
-        if(app.mouse_direction == "right"):
-            if(app.mouse_position[0] >= (app.size-1) or app.maze[app.mouse_position[0]][app.mouse_position[1]][0] == 1):
+        if app.mouse_direction == "right":
+            if app.mouse_position[0] >= (app.size-1) or app.maze[app.mouse_position[0]][app.mouse_position[1]][0] == 1:
                 return "w"
             else:
                 return ""
@@ -253,8 +259,9 @@ def whatIsAhead():
             else:
                 return ""
 
-def what_is_right(): return whatIsRight()
-def whatIsRight():
+
+# def what_is_right(): return whatIsRight()
+def whatIsRight() -> str:
     if (app.mouse_position == app.cat_position):
         return "cat's stomach"
     elif (app.mouse_position == app.cheese_position):
@@ -281,8 +288,9 @@ def whatIsRight():
             else:
                 return ""
                 
-def what_is_left(): return whatIsLeft()
-def whatIsLeft():
+
+# def what_is_left(): return whatIsLeft()
+def whatIsLeft() -> str:
     if (app.mouse_position == app.cat_position):
         return "cat's stomach"
     elif (app.mouse_position == app.cheese_position):
@@ -308,27 +316,30 @@ def whatIsLeft():
                 return "w"
             else:
                 return ""
-            
-def look_ahead(): return lookAhead()
-def lookAhead():
+
+# def look_ahead(): return lookAhead()
+def lookAhead() -> str:
     result = what_is_ahead()
     maze_debug("Looking ahead ... seeing " + result)
     return result
 
-def look_right(): return lookRight()
-def lookRight():
+
+#def look_right(): return lookRight()
+def lookRight() -> str:
     result = what_is_right()
     maze_debug("Looking right ... seeing " + result)
     return result
 
-def look_left(): return lookLeft()
-def lookLeft():
+
+# def look_left(): return lookLeft()
+def lookLeft() -> str:
     result = what_is_left()
     maze_debug("Looking left ... seeing " + result)
     return result
 
-def move_forward(): return moveForward()
-def moveForward():
+
+# def move_forward(): return moveForward()
+def moveForward() -> str:
     if(what_is_ahead() != "w" and what_is_ahead() != "cat's stomach"):
         maze_debug("Moving forward")
         old_position = app.mouse_position
@@ -353,8 +364,9 @@ def moveForward():
         app.cat_attack()
     # else do nothing!
     root.update_idletasks()
-    
-def eat_cheese(): return eatCheese()
+
+
+# def eat_cheese(): return eatCheese()
 def eatCheese():
     if(what_is_ahead()=="c"):
         maze_print("Eating cheese ... yum yum!")

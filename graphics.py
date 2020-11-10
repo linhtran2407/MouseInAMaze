@@ -319,28 +319,28 @@ def whatIsLeft() -> str:
 
 # def look_ahead(): return lookAhead()
 def lookAhead() -> str:
-    result = what_is_ahead()
+    result = whatIsAhead()
     maze_debug("Looking ahead ... seeing " + result)
     return result
 
 
-#def look_right(): return lookRight()
+# def look_right(): return lookRight()
 def lookRight() -> str:
-    result = what_is_right()
+    result = whatIsRight()
     maze_debug("Looking right ... seeing " + result)
     return result
 
 
 # def look_left(): return lookLeft()
 def lookLeft() -> str:
-    result = what_is_left()
+    result = whatIsLeft()
     maze_debug("Looking left ... seeing " + result)
     return result
 
 
 # def move_forward(): return moveForward()
 def moveForward() -> str:
-    if(what_is_ahead() != "w" and what_is_ahead() != "cat's stomach"):
+    if(whatIsAhead() != "w" and whatIsAhead() != "cat's stomach"):
         maze_debug("Moving forward")
         old_position = app.mouse_position
         if(app.mouse_direction == "right"):
@@ -359,7 +359,7 @@ def moveForward() -> str:
         else:
             app.latest = app.canvas.create_line([old_position[0]*app.multiplier + int(app.multiplier/2),old_position[1]*app.multiplier + int(app.multiplier/2),app.mouse_position[0]*app.multiplier + int(app.multiplier/2),app.mouse_position[1]*app.multiplier + int(app.multiplier/2)],fill="red",tags="line")
             app.path.append((old_position,app.mouse_position))
-    elif (what_is_ahead() == "w"):
+    elif (whatIsAhead() == "w"):
         maze_print("Trying to move through a wall!")
         app.cat_attack()
     # else do nothing!
@@ -368,7 +368,7 @@ def moveForward() -> str:
 
 # def eat_cheese(): return eatCheese()
 def eatCheese():
-    if(what_is_ahead()=="c"):
+    if(whatIsAhead()=="c"):
         maze_print("Eating cheese ... yum yum!")
         return True
     else:

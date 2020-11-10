@@ -39,8 +39,8 @@ button3 = Button(app.sideframe, text="Generate New Maze!", highlightbackground="
 button4 = Button(app.sideframe, text="Reset Mouse and Cheese", highlightbackground="light blue", command=app.restart_maze)
 button_quit = Button(app.sideframe, text="Quit", highlightbackground="light blue", command=quit_maze)
 # button5 = Button(app.sideframe, text="Eat the mouse", highlightbackground="light blue", command=app.cat_attack)
-button_Debug_on = Button(app.sideframe, text="Debugging output ON", highlightbackground="light blue", command=maze_debug_on)
-button_Debug_off = Button(app.sideframe, text="Debugging output OFF", highlightbackground="light blue", command=maze_debug_off)
+button_Debug_on = Button(app.sideframe, text="Debugging output ON", highlightbackground="light blue", command=mazeDebugOn)
+button_Debug_off = Button(app.sideframe, text="Debugging output OFF", highlightbackground="light blue", command=mazeDebugOff)
 
 v2 = StringVar()
 v2.set("10")

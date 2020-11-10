@@ -14,7 +14,7 @@ from graphics import moveForward, turnLeft, turnRight, lookAhead, lookLeft, look
 
 # Take at most one "moveForward" step, and in any case always do _something_ that might be useful
 def oneStepToCheese():
-    if (lookAhead()==""):
+    if lookAhead()=="":
         moveForward()
     else:
         turnRight()

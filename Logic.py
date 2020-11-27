@@ -10,7 +10,7 @@ This file is designed to import logic.py file for Haverford CS projects,
 try:
     import sys
     sys.path.append('/home/courses/python')
-    from logic import *
+    from Logic import *
 except:
     print("*** Can't find logic.py in /home/courses/python, resorting to basic versions")
     print("*** If this happens in the CS teaching lab, tell your instructor.")

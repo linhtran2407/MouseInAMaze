@@ -1,4 +1,4 @@
-# MouseInAMaze
+# Mouse In A Maze
 
 Game mouse in a maze is a simple Python game where:
 
